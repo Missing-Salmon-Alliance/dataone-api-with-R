@@ -64,7 +64,7 @@
         </coverage>
         <maintenance>
             <description>template_value</description>
-            <maintenanceUpdateFrequency>annually</maintenanceUpdateFrequency>
+            <maintenanceUpdateFrequency>template_value</maintenanceUpdateFrequency>
         </maintenance>
         <contact>
             <references>template_value</references>

@@ -6,6 +6,8 @@ getQueryEngineDescription(mn,"solr")
 
 # Search
 queryParamList <- list(q="author:Graeme Diack", rows="100",fl="id,title,author,archived,obsoletedBy") # rows value just to override default of 10
+queryParamList <- list(q="keywords:WKSALMON", rows="100",fl="id,title,author,archived,obsoletedBy,dateUploaded")
+
 result <- query(mn,solrQuery=queryParamList,as="data.frame")
 
 ############
@@ -21,17 +23,24 @@ result_new <- filter(result, archived_new == FALSE)
 
 ############
 # Update access policy of DataONE objects
-sysmeta <- getSystemMetadata(mn, pid)
-sysmeta <- removeAccessRule(sysmeta, "public", "read")
-sysmeta <- addAccessRule(sysmeta, "public", "read")
-status <- updateSystemMetadata(mn, pid, sysmeta)
-
 
 accessRules <- data.frame(
-  subject=c("CN=knb-data-admins,DC=dataone,DC=org","CN=knb-data-admins,DC=dataone,DC=org","CN=knb-data-admins,DC=dataone,DC=org"),
-  permission=c("read","write","changePermission"))
+  subject=c("CN=Likely Suspects Framework Users,DC=dataone,DC=org"),
+  permission=c("read","write"))
 
-sysmeta <- addAccessRule(sysmeta, accessRules)
+for(pid in result$id[56:70]){
+  sysmeta <- getSystemMetadata(mn, pid)
+  #sysmeta <- addAccessRule(sysmeta, accessRules)
+  #sysmeta <- removeAccessRule(sysmeta, accessRules)
+  #status <- updateSystemMetadata(mn, pid, sysmeta)
+  print(sysmeta@accessPolicy)
+}
+
+
+
+
+
+
 status <- updateSystemMetadata(mn, pid, sysmeta)
 
 

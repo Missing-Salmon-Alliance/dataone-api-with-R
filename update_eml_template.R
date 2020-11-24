@@ -10,7 +10,7 @@
 # TODO: Incorporate Essential Salmon Variables into Keywords
 
 #IMPORT METADATA as TIBBLE
-y <- read_csv("KNBTranslations_For_R.csv", locale = locale(encoding = "latin1")) # added locale information as getting odd results with default UTF-8
+y <- read_csv("WKSALMON_KNBTranslation_George_UPLOADED.csv", locale = locale(encoding = "latin1")) # added locale information as getting odd results with default UTF-8
 #Capture keywords in separate tibble
 y_keywords <- y[, c("commonKeywords","additionalKeywords")]
 # and remove them from the main tibble
@@ -61,7 +61,7 @@ for(i in 1:nrow(y)){ #rows ROWS CONTAIN NODE VALUES
   xml_set_attr(x, "packageId", id)
   
   # set metadataProvider node id attribute so that CONTACT/REFERENCES node works
-  xml_set_attr(xml_find_all(x, "//metadataProvider"),"id",y_sub[i,]$`metadataProvider/userId`)
+  xml_set_attr(xml_find_all(x, "//metadataProvider"),"id",y[i,]$`metadataProvider/userId`)
   # export to xml file, with custom file name based on generated uuid
   filename <- paste("eml_",id_part,".xml",sep = "")
   write_xml(x,filename)

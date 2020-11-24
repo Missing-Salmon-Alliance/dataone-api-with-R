@@ -9,6 +9,7 @@
 .Ruserdata
 *.token.R
 secrets.R
+/archive/
 
 # Example code in package build process
 *-Ex.R
