@@ -8,7 +8,10 @@ getQueryEngineDescription(mn,"solr")
 queryParamList <- list(q="author:Graeme Diack", rows="100",fl="id,title,author,archived,obsoletedBy") # rows value just to override default of 10
 queryParamList <- list(q="keywords:WKSALMON", rows="100",fl="id,title,author,archived,obsoletedBy,dateUploaded")
 
+queryParamList <- list(q="id:*2d060720-25c0-4d6d-b37d-6edd7835d425", rows="1",fl="title,author,contactOrganization")
+
 result <- query(mn,solrQuery=queryParamList,as="data.frame")
+resultNotObselete <- filter(result,is.na(obsoletedBy))
 
 ############
 # Sometimes archive status can lag in the search results
@@ -28,12 +31,13 @@ accessRules <- data.frame(
   subject=c("CN=Likely Suspects Framework Users,DC=dataone,DC=org"),
   permission=c("read","write"))
 
-for(pid in result$id[56:70]){
+for(pid in resultNotObselete$id){
   sysmeta <- getSystemMetadata(mn, pid)
-  #sysmeta <- addAccessRule(sysmeta, accessRules)
+  sysmeta <- addAccessRule(sysmeta, accessRules)
   #sysmeta <- removeAccessRule(sysmeta, accessRules)
-  #status <- updateSystemMetadata(mn, pid, sysmeta)
-  print(sysmeta@accessPolicy)
+  status <- updateSystemMetadata(mn, pid, sysmeta)
+  #print(pid)
+  #print(sysmeta@accessPolicy)
 }
 
 

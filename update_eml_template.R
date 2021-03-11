@@ -10,7 +10,13 @@
 # TODO: Incorporate Essential Salmon Variables into Keywords
 
 #IMPORT METADATA as TIBBLE
-y <- read_csv("WKSALMON_KNBTranslation_George_UPLOADED.csv", locale = locale(encoding = "latin1")) # added locale information as getting odd results with default UTF-8
+y <- read_csv("KNBTranslations.csv", locale = locale(encoding = "latin1"),quoted_na = FALSE) # added locale information as getting odd results with default UTF-8
+
+## Check for NA values, they look rubbish on KNB, replace with empty string
+# Needs some manual input if any columns as set to lgl change them to chr
+
+y <- y %>% replace(is.na(.), "")
+
 #Capture keywords in separate tibble
 y_keywords <- y[, c("commonKeywords","additionalKeywords")]
 # and remove them from the main tibble
@@ -39,9 +45,9 @@ for(i in 1:nrow(y)){ #rows ROWS CONTAIN NODE VALUES
   # keyword routine
   # Create keyword_vector of all keywords for ROW (TWO COLUMNS of KEYWORDS)
   # COLUMN 1
-  commonKeywords_vector <- str_trim(str_split(y_keywords$commonKeywords[1],",")[[1]])
+  commonKeywords_vector <- str_trim(str_split(y_keywords$commonKeywords[i],",")[[1]])
   # COLUMN 2
-  additionalKeywords_vector <- str_trim(str_split(y_keywords$additionalKeywords[1],",")[[1]])
+  additionalKeywords_vector <- str_trim(str_split(y_keywords$additionalKeywords[i],",")[[1]])
   # MERGE into keyword_vector
   keyword_vector <- c(commonKeywords_vector,additionalKeywords_vector)
   
@@ -63,7 +69,7 @@ for(i in 1:nrow(y)){ #rows ROWS CONTAIN NODE VALUES
   # set metadataProvider node id attribute so that CONTACT/REFERENCES node works
   xml_set_attr(xml_find_all(x, "//metadataProvider"),"id",y[i,]$`metadataProvider/userId`)
   # export to xml file, with custom file name based on generated uuid
-  filename <- paste("eml_",id_part,".xml",sep = "")
+  filename <- paste("eml/eml_",id_part,".xml",sep = "")
   write_xml(x,filename)
   
   # File creation complete
@@ -73,11 +79,11 @@ for(i in 1:nrow(y)){ #rows ROWS CONTAIN NODE VALUES
   dp <- new("DataPackage")
   #x <- read_xml(filename)
   id <- xml_attr(x, "packageId")
-  
+
   metadataObj <- new("DataObject", id, format="https://eml.ecoinformatics.org/eml-2.2.0", filename=filename)
   dp <- addMember(dp, metadataObj)
-  
+
   # with a metadata object added the package can now be uploaded
-  
+
   packageId <- uploadDataPackage(d1c, dp, public=FALSE, quiet=FALSE)
 }

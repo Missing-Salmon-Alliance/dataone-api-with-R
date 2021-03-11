@@ -7,6 +7,7 @@
     system="knb"
     xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
     <dataset>
+        <alternateIdentifier>template_value</alternateIdentifier>
         <title>template_value</title>
         <creator>
             <individualName>
@@ -14,6 +15,8 @@
                 <surName>template_value</surName>
             </individualName>
             <organizationName>template_value</organizationName>
+            <electronicMailAddress>template_value</electronicMailAddress>
+            <userId directory="https://orcid.org">template_value</userId>
         </creator>
         <metadataProvider>
             <individualName>
