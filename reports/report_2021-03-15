@@ -1,0 +1,27 @@
+uuid,knbURI,datasetTitle
+b9c72deb-7710-4a6c-92d6-9a07ff8aae20,https://knb.ecoinformatics.org/view/urn:uuid:b9c72deb-7710-4a6c-92d6-9a07ff8aae20,NS-IBTS (North Sea International Bottom Trawl Survey). 1965-2012
+dc30d6c3-f083-4ae1-8970-032b982a0bb8,https://knb.ecoinformatics.org/view/urn:uuid:dc30d6c3-f083-4ae1-8970-032b982a0bb8,BITS (Baltic International Trawl Survey). 1991-2020
+78baf41c-ecf4-471f-9368-eb2d1e8a95ad,https://knb.ecoinformatics.org/view/urn:uuid:78baf41c-ecf4-471f-9368-eb2d1e8a95ad,SWC-IBTS (Scottish West Coast Bottom Trawl Survey). 1985-2010
+a68b068c-21e7-4cb3-8203-5c31333bc4bf,https://knb.ecoinformatics.org/view/urn:uuid:a68b068c-21e7-4cb3-8203-5c31333bc4bf,EVHOE (French Southern North Atlantic Bottom Trawl Survey). 1997-2020
+cac6335d-a5c5-4693-a333-c414cb117daa,https://knb.ecoinformatics.org/view/urn:uuid:cac6335d-a5c5-4693-a333-c414cb117daa,SP-PORC (Spanish Porcupine Bottom Trawl Survey). 2001-2019
+a1428398-ab50-45d0-a346-388e9234be3d,https://knb.ecoinformatics.org/view/urn:uuid:a1428398-ab50-45d0-a346-388e9234be3d,SP-North (Spanish North Coast Bottom Trawl Survey). 1990-2020
+94d0bdc8-2621-49be-ad7d-e772f085a393,https://knb.ecoinformatics.org/view/urn:uuid:94d0bdc8-2621-49be-ad7d-e772f085a393,SP-ARSA (Spanish Gulf of Cadiz Bottom Trawl Survey). 1996-2019
+e695d647-9af1-454e-9ee4-7cddb67a1fc2,https://knb.ecoinformatics.org/view/urn:uuid:e695d647-9af1-454e-9ee4-7cddb67a1fc2,PT-IBTS (Portuguese International Bottom Trawl Survey). 2002-2017
+23f1222b-719b-4441-9035-b879aea610fd,https://knb.ecoinformatics.org/view/urn:uuid:23f1222b-719b-4441-9035-b879aea610fd,FR-CGFS (French Channel Ground Fish Survey). 1988-2019
+6f272d69-bf96-4bae-b852-ea7efcfc6c6f,https://knb.ecoinformatics.org/view/urn:uuid:6f272d69-bf96-4bae-b852-ea7efcfc6c6f,NIGFS (Northern Ireland Ground Fish Survey). 2005-2019
+ee732474-f624-4b2a-81d0-49542788b425,https://knb.ecoinformatics.org/view/urn:uuid:ee732474-f624-4b2a-81d0-49542788b425,ROCKALL (Scottish Rockall Survey). 1999-2009
+1e178b95-3581-49ad-8a5c-9a41707f0f5c,https://knb.ecoinformatics.org/view/urn:uuid:1e178b95-3581-49ad-8a5c-9a41707f0f5c,BTS (Beam Trawl Survey). 1985-2020
+689f1cbc-55fc-4b2c-902d-90c8c293a024,https://knb.ecoinformatics.org/view/urn:uuid:689f1cbc-55fc-4b2c-902d-90c8c293a024,IE-IGFS (Irish Ground Fish Survey). 2003-2019
+33e6c647-97f1-4f78-8baf-26ee68ced092,https://knb.ecoinformatics.org/view/urn:uuid:33e6c647-97f1-4f78-8baf-26ee68ced092,BTS-VIII (Beam Trawl Survey  Bay of Biscay (VIII)). 2011-2019
+06d4592a-89a9-4504-9a4b-327ad3ba902d,https://knb.ecoinformatics.org/view/urn:uuid:06d4592a-89a9-4504-9a4b-327ad3ba902d,DWS (Deepwater Surveys). 2006-2009
+7ca22cf9-2910-4009-b549-76b9890fee99,https://knb.ecoinformatics.org/view/urn:uuid:7ca22cf9-2910-4009-b549-76b9890fee99,DYFS (Inshore Beam Trawl Survey). 2002-2020
+7eda3bda-0db7-4b71-a477-3c70178d316d,https://knb.ecoinformatics.org/view/urn:uuid:7eda3bda-0db7-4b71-a477-3c70178d316d,IS-IDPS (Irminger Sea International Deep Pelagic Survey). 2009
+7db62355-efa8-4871-a17c-fbacebbf2b2f,https://knb.ecoinformatics.org/view/urn:uuid:7db62355-efa8-4871-a17c-fbacebbf2b2f,NS-IDPS (Norwegian Sea International Deep Pelagic Survey). 2009-2016
+12500097-f4b0-4fe3-af65-d5c89f7689b8,https://knb.ecoinformatics.org/view/urn:uuid:12500097-f4b0-4fe3-af65-d5c89f7689b8,SCOROC (Scottish Rockall Survey  new (from 2011)). 2011-2020
+d42f5ccd-9793-4035-97bf-b1f4ae16416c,https://knb.ecoinformatics.org/view/urn:uuid:d42f5ccd-9793-4035-97bf-b1f4ae16416c,SCOWCFGS (Scottish West Coast Groundfish Survey (from 2011). 2011-2020
+c7adcb82-2c5f-4959-9693-96967d6c550e,https://knb.ecoinformatics.org/view/urn:uuid:c7adcb82-2c5f-4959-9693-96967d6c550e,BTS-GSA17 (Beam Trawl Survey  SoleMon (Adriatic Survey)  GSA17). 2016-2019
+0c59555b-600a-413f-a794-9abbaab64738,https://knb.ecoinformatics.org/view/urn:uuid:0c59555b-600a-413f-a794-9abbaab64738,IE-IAMS (Irish Anglerfish and Megrim Survey). 2016-2019
+5a6ceef9-ae76-41c0-a648-af1221fe47c4,https://knb.ecoinformatics.org/view/urn:uuid:5a6ceef9-ae76-41c0-a648-af1221fe47c4,SNS (Sole Net Survey). 2002-2020
+510f30a4-283a-45fb-ba12-d30804d765fb,https://knb.ecoinformatics.org/view/urn:uuid:510f30a4-283a-45fb-ba12-d30804d765fb,NS-IBTS_UNIFtest (Test of unified format of NS-IBTS). 2012/2019
+1a001f95-9188-4044-a802-200f457174ca,https://knb.ecoinformatics.org/view/urn:uuid:1a001f95-9188-4044-a802-200f457174ca,SE_SOUND (Sweden Sound Survey). 2011-2020
+556ca885-e607-4f67-8062-1e41e0bac417,https://knb.ecoinformatics.org/view/urn:uuid:556ca885-e607-4f67-8062-1e41e0bac417,NL-BSAS (Netherlands Industry Survey on Turbot and Brill). 2019-2020

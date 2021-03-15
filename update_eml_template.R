@@ -11,10 +11,18 @@
 
 #IMPORT METADATA as TIBBLE
 y <- read_csv("KNBTranslations.csv", locale = locale(encoding = "latin1"),quoted_na = FALSE) # added locale information as getting odd results with default UTF-8
-
+y$pubDate <- Sys.Date() # set publication date to today
 ## Check for NA values, they look rubbish on KNB, replace with empty string
 # Needs some manual input if any columns as set to lgl change them to chr
+# Note a way to do this is if all values in lgl column are known to be NA, just replace whole column manually with ""
+# NOTE Some eml fields must be non-empty string if they exist and so "NA" is most appropriate
+# Sample Code
+# y$`coverage/taxonomicCoverage/generalTaxonomicCoverage` <- c("Non-Specific")
+# y$`coverage/taxonomicCoverage/taxonomicClassification/taxonRankName` <- c("NA")
+# y$`coverage/taxonomicCoverage/taxonomicClassification/taxonRankValue` <- c("NA")
+# y$`creator/userId` <- c("") # UserID is OK with empty strings
 
+# This line will replace any remaining NA value with empty string once lgl columns are dealt with
 y <- y %>% replace(is.na(.), "")
 
 #Capture keywords in separate tibble
@@ -27,6 +35,11 @@ x <- read_xml("DataONE EML Template.xml")
 
 #SET BASE XML NODE PATH
 xpath_base <- "/eml:eml/dataset/"
+
+# Create report tibble with UUID, KNB URL and Dataset Title
+
+report <- tibble::tibble(uuid = character(),knbURI = character(), datasetTitle = character())
+
 
 ###
 #Main FOR loop - FOR EACH TIBBLE ROW: Set new xml node values based on row, export to file and create/upload knb datapackage from file
@@ -86,4 +99,11 @@ for(i in 1:nrow(y)){ #rows ROWS CONTAIN NODE VALUES
   # with a metadata object added the package can now be uploaded
 
   packageId <- uploadDataPackage(d1c, dp, public=FALSE, quiet=FALSE)
+  
+  ###
+  # Create upload report tibble
+  
+  report <- dplyr::bind_rows(report,tibble::tibble(uuid = id_part,knbURI = paste0("https://knb.ecoinformatics.org/view/urn:uuid:",id_part), datasetTitle = y$title[i]))
 }
+
+write_csv(report,paste0("report_",Sys.Date()))
